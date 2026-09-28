@@ -2,11 +2,10 @@ package main
 
 import (
 	"log"
-	"os"
+	_ "os"
 )
 
 func main() {
-	logger := log.New(os.Stdout, "my-program:", log.Lshortfile|log.LstdFlags)
-
-	logger.Println("Test message")
+	log.SetFlags(log.LstdFlags | log.Lshortfile)
+	log.Println("Test message")
 }
