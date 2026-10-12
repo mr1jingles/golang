@@ -18,7 +18,7 @@ func main() {
 	fmt.Println("Going to call another C function!")
 	myMessage := C.CString("This is Sparta!")
 
-	defer C.free(unsafe.Pointer(&myMessage))
+	defer C.free(unsafe.Pointer(myMessage))
 	C.printMessage(myMessage)
 	fmt.Println("All done!")
 }
